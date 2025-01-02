@@ -2,9 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    //Dependencies Settup
-    alias(libs.plugins.hilt.android)
-    kotlin("kapt")
+
+    //InitialSetup: Applying hilt and kapt plugins on module level.
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -43,7 +44,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -63,12 +63,18 @@ dependencies {
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.lifecycle.viewmodel)
 
-    // Room
+    //InitialSetup: room dep
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.common)
 
-    // Hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    //InitialSetup: hilt dep
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
+}
+
+//InitialSetup: Applying kapt type errors corrections for Hilt and room compilers
+kapt {
+    correctErrorTypes = true
 }

@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
-    //Dependencies settup
-    alias(libs.plugins.hilt.android) apply false
+
+    //InitialSetup: : Applying hilt and kapt plugins on project level.
+    alias(libs.plugins.hilt) apply false
+    alias(libs.plugins.kotlin.kapt) apply false
 }
