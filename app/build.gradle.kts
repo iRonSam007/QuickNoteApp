@@ -72,6 +72,7 @@ dependencies {
     //InitialSetup: hilt dep
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
 }
 
 //InitialSetup: Applying kapt type errors corrections for Hilt and room compilers

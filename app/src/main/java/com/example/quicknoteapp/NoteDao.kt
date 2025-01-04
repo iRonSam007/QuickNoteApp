@@ -14,7 +14,7 @@ interface NoteDao {
     suspend fun insert(note: Note)
 
     @Query("SELECT * FROM notes")
-    fun getNotes(): Flow<List<Note>> //Flow for more reactive data observation
+    fun getNotes(): Flow<List<Note>>
 
     @Delete
     suspend fun delete(note: Note)

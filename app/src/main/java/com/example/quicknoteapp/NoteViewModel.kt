@@ -14,7 +14,7 @@ class NoteViewModel @Inject constructor(
     private val noteDao: NoteDao
 ) : ViewModel()
 {
-    //convert the flow of List<Note> into a StateFlow, so that UI observer gets the last emitted value whenever it starts collecting, rather than waiting for the flow to be emitted sequentially.
+    //Flow<List<Note>> will be converted into a StateFlow, so that UI observer gets the last emitted value whenever it starts collecting, better than waiting for the flow to be emitted sequentially.
     val notes: StateFlow<List<Note>> = noteDao.getNotes().stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
     fun addNote(title: String, content: String){
         viewModelScope.launch {
