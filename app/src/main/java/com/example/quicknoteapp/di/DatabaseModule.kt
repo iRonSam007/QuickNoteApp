@@ -1,7 +1,9 @@
-package com.example.quicknoteapp
+package com.example.quicknoteapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.quicknoteapp.data.local.NoteDao
+import com.example.quicknoteapp.data.local.NoteDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +16,7 @@ import javax.inject.Singleton
 object DatabaseModule {
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context: Context): NoteDatabase{
+    fun provideDatabase(@ApplicationContext context: Context): NoteDatabase {
         return Room.databaseBuilder(context, NoteDatabase::class.java, "notes_db").build()
     }
 

@@ -1,4 +1,4 @@
-package com.example.quicknoteapp
+package com.example.quicknoteapp.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,6 +22,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.quicknoteapp.domain.model.Note
+import com.example.quicknoteapp.ui.viewmodels.NoteViewModel
 
 
 @Composable

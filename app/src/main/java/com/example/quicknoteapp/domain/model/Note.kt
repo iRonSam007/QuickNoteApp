@@ -1,4 +1,4 @@
-package com.example.quicknoteapp
+package com.example.quicknoteapp.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

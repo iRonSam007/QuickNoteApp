@@ -1,7 +1,8 @@
-package com.example.quicknoteapp
+package com.example.quicknoteapp.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.example.quicknoteapp.domain.model.Note
 
 
 @Database(
