@@ -38,12 +38,6 @@ fun QuickNoteScreen(noteViewModel: NoteViewModel = hiltViewModel()){
         NoteInput{
             title, content -> noteViewModel.addNote(title, content)
         }
-
-        LazyColumn {
-            items(notes) {
-                note -> NoteItem(note = note, onDelete = {noteViewModel.deleteNote(note) })
-            }
-        }
     }
 }
 
